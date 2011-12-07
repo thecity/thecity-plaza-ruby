@@ -9,6 +9,11 @@
 require 'rubygems'
 require 'json'
 require 'open-uri'
+require 'ruby-debug'
+
+['/cachers/**/*.rb', '/loaders/**/.rb', '/plaza/**/*.rb'].each do |lib_path| 
+  Dir.glob(File.dirname(__FILE__) + lib_path).each { |lib_file| require lib_file }
+end
 
 
 # This class is meant to be a wrapper for the OnTheCity.org API.
