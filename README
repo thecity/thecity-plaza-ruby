@@ -1,0 +1,5 @@
+This Ruby project is meant to be used with OnTheCity (Software to enable communication and community in your church)
+
+I originally developed this library in PHP for my church (Living Stones - Reno, NV), but since I actually like Ruby better I thought I would port it.
+
+I am currently working out the structure so it is VERY alpha right now.
