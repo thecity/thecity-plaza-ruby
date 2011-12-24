@@ -8,18 +8,34 @@
 
 
 # This class is a wrapper for the topics page.
-class Topics
+#
+# @package OnTheCity
+class Topics < Plaza 
 
   # Constructor.
   #
-  # <b>TopicsLoader loader</b> The object that loaded the data.
-  def initialize(loader)
+  # @param TopicsLoader loader The object that loaded the data.
+  def initialize(loader) 
+    super
     @json_data = loader.load_feed
   end
-
-  # Returns an array of all the topics on the plaza
-  def all
-    @json_data.collect { |topic| topic[:global_topic][:title] }
+  
+  
+  # All the public topics on the Plaza.
+  #
+  # @return array of prayers.
+  def all_titles
+    @json_data.collect { |prayer| prayer[:global_topic][:title] }
   end
-
+  
+  
+  # Get the specified topic.
+  #
+  # @param index The index of the topic to get all the information for.
+  #
+  # @return Topic
+  def get_prayer(index)
+    Prayer.new( @json_data[index][:global_topic] )
+  end
+  
 end

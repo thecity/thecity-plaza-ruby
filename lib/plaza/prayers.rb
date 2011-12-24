@@ -1,25 +1,41 @@
-# Project::    OnTheCity API 
-# File::       prayers.rb
+# Project:    OnTheCity API 
+# File:       prayers.rb
 #
-# Author:: Wes Hays <weshays@gbdev.com> 
-# Link:: https://github.com/weshays/onthecity-api-ruby
-# Version:: 1.0a
-# Package:: OnTheCity
+# @author Wes Hays <weshays@gbdev.com> 
+# @link https://github.com/weshays/onthecity-api-php
+# @version 1.0a
+# @package OnTheCity
 
 
 # This class is a wrapper for the prayers page.
-class Prayers
+#
+# @package OnTheCity
+class Prayers < Plaza 
 
   # Constructor.
   #
-  # <b>PrayersLoader loader</b> The object that loaded the data.
-  def initialize(loader)
+  # @param PrayersLoader loader The object that loaded the data.
+  def initialize(loader) 
+    super
     @json_data = loader.load_feed
   end
-
-  # Returns an array of all the prayers on the plaza
-  def all
+  
+  
+  # All the public prayers on the Plaza.
+  #
+  # @return array of prayers.
+  def all_titles
     @json_data.collect { |prayer| prayer[:global_prayer][:title] }
   end
-
+  
+  
+  # Get the specified prayer.
+  #
+  # @param index The index of the prayer to get all the information for.
+  #
+  # @return Prayer
+  def get_prayer(index)
+    Prayer.new( @json_data[index][:global_prayer] )
+  end
+  
 end
