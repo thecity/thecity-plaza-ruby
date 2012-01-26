@@ -2,7 +2,7 @@
 
 //   /** 
 //    * Project:    OnTheCity API 
-//    * File:       postgres_cache.php
+//    * File:       json_cache.php
 //    *
 //    * @author Wes Hays <weshays@gbdev.com> 
 //    * @link https://github.com/weshays/onthecity-api-php
@@ -10,19 +10,24 @@
 //    * @package OnTheCity
 //    */
 
-
+//   /**
+//    * Uses the predis library to access Redis.
+//    */
+//   require_once( ONTHECITY_LIB_DIR . '/../etc/predis/autoload.php');
   
 
 //   /** 
-//    * This class caches the data in a postgresql database.
+//    * This class caches the data in a json
 //    *
 //    * @package OnTheCity
 //    */
-//   class PostgresCache implements CacheInterface {
+//   class RedisCache implements CacheInterface {
     
 //     // The subdomain to load and store the data for.
 //     private $subdomain;
     
+//     // The redis instance to save cache information
+//     private $redis;
     
 //     /**
 //      *  Constructor.
@@ -32,6 +37,9 @@
 //      */
 //     public function __construct($subdomain) {
 //       $this->subdomain = $subdomain;
+      
+//       Predis\Autoloader::register();
+//       $this->redis = new Predis\Client();
 //     }
     
     
@@ -45,6 +53,7 @@
 //      * @return mixed Returns true on success or a string error message on false.
 //      */
 //     public function save_data($key, $data, $expire_in = null) {
+//       $this->redis->set($key, $data);
 //     } 
     
     
@@ -57,6 +66,7 @@
 //      * @return JSON data.
 //      */
 //     public function get_data($key) {   
+//       $this->redis->get($key);
 //     }
     
     

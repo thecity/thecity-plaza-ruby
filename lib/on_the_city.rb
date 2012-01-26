@@ -29,23 +29,23 @@ class OnTheCity
     # The subdomain to load the data for.
     @subdomain = subdomain
 
-    # # The albums loaded for the subdomain.
-    # @albums
-    # 
-    # # The events loaded for the subdomain.
-    # @events
-    # 
-    # # The needs loaded for the subdomain. 
-    # @needs
-    # 
-    # # The prayers loaded for the subdomain.
-    # @prayers
-    # 
-    # # The topics loaded for the subdomain. 
-    # @topics
-    # 
-    # # The object to store and load the cache.
-    # @cacher
+    # The albums loaded for the subdomain.
+    @albums = nil
+    
+    # The events loaded for the subdomain.
+    @events = nil
+    
+    # The needs loaded for the subdomain. 
+    @needs = nil
+    
+    # The prayers loaded for the subdomain.
+    @prayers = nil
+    
+    # The topics loaded for the subdomain. 
+    @topics = nil
+    
+    # The object to store and load the cache.
+    @cacher = nil
     
     if cache_data === true
       @cacher = cacher.nil? ? JsonCache.new(subdomain) : cacher
@@ -58,12 +58,44 @@ class OnTheCity
   #
   # Returns array of all the topics posted on the Plaza.
   def topics
-    return @topics unless @topics.nil?
-    
-    loader = TopicsLoader.new( @subdomain, @cacher )
-    
+    return @topics if @topics    
+    loader = TopicsLoader.new( @subdomain, @cacher )    
     @topics = Topics.new( loader );
     return @topics
   end
 
+
+  # Shows all the needs posted on the Plaza.
+  #
+  # Returns array of all the needs posted on the Plaza.
+  def needs
+    return @needs if @needs    
+    loader = NeedsLoader.new( @subdomain, @cacher )    
+    @needs = Needs.new( loader );
+    return @needs
+  end
+
+
+  # Shows all the prayers posted on the Plaza.
+  #
+  # Returns array of all the prayers posted on the Plaza.
+  def prayers
+    return @prayers if @prayers    
+    loader = PrayersLoader.new( @subdomain, @cacher )    
+    @prayers = Prayers.new( loader );
+    return @prayers
+  end
+
+
+  # Shows all the events posted on the Plaza.
+  #
+  # Returns array of all the events posted on the Plaza.
+  def events
+    return @events if @events    
+    loader = EventsLoader.new( @subdomain, @cacher )    
+    @events = Events.new( loader );
+    return @events
+  end
+  
 end
+
