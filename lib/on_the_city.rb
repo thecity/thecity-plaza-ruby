@@ -9,11 +9,16 @@
 require 'rubygems'
 require 'json'
 require 'open-uri'
-require 'ruby-debug'
 
-['/cachers/**/*.rb', '/loaders/**/.rb', '/plaza/**/*.rb'].each do |lib_path| 
-  Dir.glob(File.dirname(__FILE__) + lib_path).each { |lib_file| require lib_file }
-end
+
+# The path to the lib directory.
+ONTHECITY_LIB_DIR = File.dirname(__FILE__)
+  
+# The path to the storage directory that will be used for caching data to disk.
+ONTHECITY_STORAGE_DIR = File.dirname(__FILE__) + '/../storage/'
+
+
+require File.dirname(__FILE__) + '/auto_load.rb'
 
 
 # This class is meant to be a wrapper for the OnTheCity.org API.

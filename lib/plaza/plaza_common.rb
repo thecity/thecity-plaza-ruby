@@ -1,5 +1,5 @@
 # Project:    OnTheCity API 
-# File:       plaza.php
+# File:       plaza_common.rb
 #
 # @author Wes Hays <weshays@gbdev.com> 
 # @link https://github.com/weshays/onthecity-api-php
@@ -18,14 +18,14 @@ class PlazaCommon
   #
   # @param array $data a Hash containing all the data to initialize this object.  
   def initialize(data)
-    @data = data;
+    @data = data
   end
     
     
   #
   # @return The title of this plaza item.
   #
-  public function title
+  def title
     @data[:title]
   end
     
@@ -33,7 +33,7 @@ class PlazaCommon
   #
   # @return When this plaza item was created.
   #
-  public function created_at
+  def created_at
     @data[:created_at]
   end
 
@@ -41,7 +41,7 @@ class PlazaCommon
   #
   # @return The name of the person who made this plaza item.
   #
-  public function who_posted
+  def who_posted
     @data[:user][:long_name]
   end
     
@@ -49,16 +49,17 @@ class PlazaCommon
   #
   # @return The content of this plaza item.     
   #
-  public function content
+  def content
     self.clean_text( @data[:body] )
   end
     
     
+  protected
     
    # Clean text by removing html tags and other special characters.
    #
    # @return Clean text.
-  protected function clean_text(text) {
+  def clean_text(text)
     # $text = strip_tags( $text );
     # return iconv("UTF-8", "ISO-8859-1//IGNORE", $text);
     text.strip

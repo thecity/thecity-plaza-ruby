@@ -44,7 +44,7 @@ class CacheAdapter
   # Expire the cache.
   #
   # * <b>key</b> The key to use to expire the cache.
-  def expire_cache(key)
+  def expire_cache!(key)
     raise 'The expire_cache method must be implemented'
   end
 
@@ -52,7 +52,7 @@ class CacheAdapter
   # Check if the cache has expired.
   #
   # * <b>key</b> The key to use to check if the cache has expired.
-  def is_cache_expired(key)
+  def is_cache_expired?(key)
     raise 'The is_cache_expired method must be implemented'
   end  
 
