@@ -60,9 +60,11 @@ class PlazaCommon
    #
    # @return Clean text.
   def clean_text(text)
-    # $text = strip_tags( $text );
-    # return iconv("UTF-8", "ISO-8859-1//IGNORE", $text);
-    text.strip
+    text.strip!
+    text = text.gsub(%r{</?[^>]+?>}, '')
+    ic_ignore = Iconv.new('US-ASCII//IGNORE', 'UTF-8')
+    return ic_ignore.iconv(text)
   end
+
 
 end

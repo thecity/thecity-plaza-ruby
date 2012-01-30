@@ -8,18 +8,34 @@
 
 
 # This class is a wrapper for the albums page.
-class Albums
+#
+# @package OnTheCity
+class Albums < Plaza 
 
   # Constructor.
   #
-  # <b>AlbumsLoader loader</b> The object that loaded the data.
-  def initialize(loader)
+  # @param AlbumsLoader loader The object that loaded the data.
+  def initialize(loader) 
+    #super
     @json_data = loader.load_feed
   end
-
-  # Returns an array of all the albums on the plaza
-  def all
-    @json_data.collect { |album| album[:global_album][:title] }
+  
+  
+  # All the public albums on the Plaza.
+  #
+  # @return array of prayers.
+  def all_titles
+    @json_data.collect { |album| album['global_album']['title'] }
   end
-
+  
+  
+  # Get the specified album.
+  #
+  # @param index The index of the album to get all the information for.
+  #
+  # @return Album
+  def get_album(index)
+    Album.new( @json_data[index]['global_album'] )
+  end
+  
 end

@@ -23,17 +23,17 @@ class Topic < PlazaCommon
 	# @return The responses to the topic.
 	def posts
 	  rposts = []
-	  @data[:posts].each do |post|
+	  @data['posts'].each do |post|
 	    name = 'Unknown'
-	    if !post[:user].nil?
-	      name = post[:user][:long_name]
-	    elsif !post[:facebook_user].nil? 
-	      name = [post[:facebook_user][:first], post[:facebook_user][:last]].join(' ')
+	    if !post['user'].nil?
+	      name = post['user']['long_name']
+	    elsif !post['facebook_user'].nil? 
+	      name = [post['facebook_user']['first'], post['facebook_user']['last']].join(' ')
 	    end
 
-	    rposts << {:created_at => post[:created_at],
+	    rposts << {:created_at => post['created_at'],
 	               :who_posted => name,
-	               :content    => self.clean_text( post[:body] ) }
+	               :content    => self.clean_text( post['body'] ) }
     end	               
    	rposts
 	end

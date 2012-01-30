@@ -1,56 +1,42 @@
-// <?php
-
-//   /** 
-//   * Project:    OnTheCity API 
-//   * File:       need.php
-//    *
-//    * @author Wes Hays <weshays@gbdev.com> 
-//    * @link https://github.com/weshays/onthecity-api-php
-//    * @version 1.0a
-//    * @package OnTheCity
-//    */
+# Project::    OnTheCity API 
+# File::       need.rb
+#
+# Author:: Wes Hays <weshays@gbdev.com> 
+# Link:: https:github.com/weshays/onthecity-api-ruby
+# Version:: 1.0a
+# Package:: OnTheCity
 
 
-//   /** 
-//    * A need instance.  This object is immutable.
-//    *
-//    * @package OnTheCity
-//    */
-//   class Need extends PlazaCommon {
+# A need instance.  This object is immutable.
+#
+# @package OnTheCity
+class Need < PlazaCommon 
     
-//     /**
-//      * Constructor.
-//      *
-//      * @param array $data a Hash containing all the data to initialize this need.
-//      */
-//     public function __construct($data) {
-//       parent::__construct($data);
-//     }
+	# Constructor.
+	#
+	# @param array $data a Hash containing all the data to initialize this need.
+  def initialize(data) 
+    super(data)
+  end
     
     
-//     /**
-//      * @return The responses to the need.
-//      */
-//     public function posts() {      
-//       $rposts = array();
-//       foreach ($this->data->need_responses as $need_response) { 
-//         $name = 'Unknown';
-//         if( !is_null($need_response->user) ) {
-//           $name = $need_response->user->long_name;
-//         } 
-//         else if( !is_null($need_response->facebook_user) ) {
-//           $name = $need_response->facebook_user->first.' '.$need_response->facebook_user->last;
-//         }
-        
-//         $rposts[] = array(
-//           'created_at' => $need_response->created_at,
-//           'who_posted' => $name,
-//           'content'    => $this->clean_text( $need_response->body )
-//         );
-//       }
-       
-//       return $rposts;
-//     }
+	# @return The responses to the need.
+	def posts
+	  rposts = []
+	  @data['posts'].each do |post|
+	    name = 'Unknown'
+	    if !post['user'].nil?
+	      name = post['user']['long_name']
+	    elsif !post['facebook_user'].nil? 
+	      name = [post['facebook_user']['first'], post['facebook_user']['last']].join(' ')
+	    end
+
+	    rposts << {:created_at => post['created_at'],
+	               :who_posted => name,
+	               :content    => self.clean_text( post['body'] ) }
+    end	               
+   	rposts
+	end
+
+end
     
-//   }
-// ?>
