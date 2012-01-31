@@ -1,6 +1,6 @@
 require "#{File.dirname(__FILE__)}/../spec_helper"
 
-describe 'TopicsLoader' do
+describe 'EventsLoader' do
 
   it 'should create a new instance params are valid'
   
