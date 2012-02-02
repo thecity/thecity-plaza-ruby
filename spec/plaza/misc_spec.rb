@@ -44,11 +44,6 @@ describe 'OnTheCity::Plaza::Topics' do
     subdomain = 'livingstones'
     loader = TopicsLoaderStaging.new(subdomain, nil)
     topics = Topics.new(loader)
-
-    require 'ruby-debug'
-    debugger
-    asdf=234
-    
     topics.all_titles.class.should == Array
   end
 
