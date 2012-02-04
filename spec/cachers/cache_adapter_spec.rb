@@ -1,6 +1,6 @@
 require "#{File.dirname(__FILE__)}/../spec_helper"
 
-describe 'TopicsLoader' do
+describe 'CacheAdapter' do
 
   it 'should create a new instance params are valid'
   

@@ -1,6 +1,6 @@
-require "#{File.dirname(__FILE__)}/../spec_helper"
+require "#{File.dirname(__FILE__)}/../../spec_helper"
 
-describe 'JsonCacher' do
+describe 'JsonCache' do
 
   it 'should create a new instance if the subdomain is specified.' do
     jc = JsonCache.new('livingstones')
