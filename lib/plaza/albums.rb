@@ -25,7 +25,7 @@ class Albums < Plaza
   #
   # @return array of prayers.
   def all_titles
-    @json_data.collect { |album| album['global_album']['title'] }
+    @json_data.collect { |album| album['title'] }
   end
   
   
@@ -35,7 +35,7 @@ class Albums < Plaza
   #
   # @return Album
   def get_album(index)
-    Album.new( @json_data[index]['global_album'] )
+    Album.new( @json_data[index] )
   end
   
 end

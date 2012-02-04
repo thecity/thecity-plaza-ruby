@@ -25,7 +25,7 @@ class Events < Plaza
   #
   # @return array of prayers.
   def all_titles
-    @json_data.collect { |event| event['global_event']['title'] }
+    @json_data.collect { |event| event['title'] }
   end
   
   
@@ -35,7 +35,7 @@ class Events < Plaza
   #
   # @return Event
   def get_event(index)
-    Event.new( @json_data[index]['global_event'] )
+    Event.new( @json_data[index] )
   end
   
 end

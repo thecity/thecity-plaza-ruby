@@ -25,7 +25,7 @@ class Needs < Plaza
   #
   # @return array of prayers.
   def all_titles
-    @json_data.collect { |need| need['global_need']['title'] }
+    @json_data.collect { |need| need['title'] }
   end
   
   
@@ -35,7 +35,7 @@ class Needs < Plaza
   #
   # @return Need
   def get_need(index)
-    Need.new( @json_data[index]['global_need'] )
+    Need.new( @json_data[index] )
   end
   
 end

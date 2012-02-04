@@ -25,7 +25,7 @@ class Topics < Plaza
   #
   # @return array of prayers.
   def all_titles
-    @json_data.collect { |topic| topic['global_topic']['title'] }
+    @json_data.collect { |topic| topic['title'] }
   end
   
   
@@ -35,7 +35,7 @@ class Topics < Plaza
   #
   # @return Topic
   def get_topic(index)
-    Topic.new( @json_data[index]['global_topic'] )
+    Topic.new( @json_data[index] )
   end
   
 end
