@@ -13,7 +13,7 @@ the_city = TheCity.new('livingstones', false);
 the_city.topics.all_titles.each { |t| puts t }
 
 
-topic = the_city.topics.get_topic(1)
+topic = the_city.topics[1]
 
 
 puts '--------------------------'
