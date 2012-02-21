@@ -10,7 +10,7 @@ require File.dirname(__FILE__) + '/lib/the_city.rb'
 
 the_city = TheCity.new('livingstones', false);
 
-#the_city.topics.all_titles.each { |t| puts t }
+the_city.topics.all_titles.each { |t| puts t }
 
 
 topic = the_city.topics.get_topic(1)

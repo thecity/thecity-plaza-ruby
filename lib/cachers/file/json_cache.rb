@@ -30,7 +30,7 @@ class JsonCache < CacheAdapter
 	#
 	# @return mixed Returns true on success or a string error message on false.	
 	def save_data(key, data, expire_in = nil)
-		expire_in = 86400 if expire_in.nil?  # 86400 seconds = 1 day
+		expire_in = 3600 if expire_in.nil?  # 3600 seconds = 1 hour
 		expire_in += Time.now.to_i
 
 		create_cache_directory_if_needed
