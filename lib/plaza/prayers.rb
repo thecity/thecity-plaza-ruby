@@ -27,6 +27,7 @@ class Prayers < Plaza
   def all_titles
     @json_data.collect { |prayer| prayer['global_prayer']['title'] }
   end
+  alias :titles, :all_titles
   
   
   # Get the specified prayer.
@@ -37,6 +38,7 @@ class Prayers < Plaza
   def get_prayer(index)
     Prayer.new( @json_data[index]['global_prayer'] )
   end
+  alias [] :get_prayer
   
 end
 

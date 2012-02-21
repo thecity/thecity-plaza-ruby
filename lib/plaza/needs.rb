@@ -23,10 +23,11 @@ class Needs < Plaza
   
   # All the public needs on the Plaza.
   #
-  # @return array of prayers.
+  # @return array of needs.
   def all_titles
     @json_data.collect { |need| need['global_need']['title'] }
   end
+  alias :titles, :all_titles
   
   
   # Get the specified need.
@@ -37,6 +38,7 @@ class Needs < Plaza
   def get_need(index)
     Need.new( @json_data[index]['global_need'] )
   end
+  alias [] :get_need
   
 end
 

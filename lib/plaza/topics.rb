@@ -23,10 +23,11 @@ class Topics < Plaza
   
   # All the public topics on the Plaza.
   #
-  # @return array of prayers.
+  # @return array of topics.
   def all_titles
     @json_data.collect { |topic| topic['global_topic']['title'] }
   end
+  alias :titles, :all_titles
   
   
   # Get the specified topic.
@@ -37,5 +38,6 @@ class Topics < Plaza
   def get_topic(index)
     Topic.new( @json_data[index]['global_topic'] )
   end
+  alias [] :get_topic
   
 end

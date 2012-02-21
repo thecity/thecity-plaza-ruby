@@ -15,6 +15,7 @@ the_city.topics.all_titles.each { |t| puts t }
 
 topic = the_city.topics.get_topic(1)
 
+
 puts '--------------------------'
 puts "Topic: #{topic.title}\n\n"
 puts "Message: #{topic.content.strip}"

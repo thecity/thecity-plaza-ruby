@@ -23,10 +23,11 @@ class Albums < Plaza
   
   # All the public albums on the Plaza.
   #
-  # @return array of prayers.
+  # @return array of albums.
   def all_titles
     @json_data.collect { |album| album['global_album']['title'] }
   end
+  alias :titles, :all_titles
   
   
   # Get the specified album.
@@ -37,5 +38,6 @@ class Albums < Plaza
   def get_album(index)
     Album.new( @json_data[index]['global_album'] )
   end
+  alias [] :get_album
   
 end

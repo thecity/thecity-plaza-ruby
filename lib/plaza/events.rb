@@ -23,10 +23,11 @@ class Events < Plaza
   
   # All the public events on the Plaza.
   #
-  # @return array of prayers.
+  # @return array of events.
   def all_titles
     @json_data.collect { |event| event['global_event']['title'] }
   end
+  alias :titles, :all_titles
   
   
   # Get the specified event.
@@ -37,5 +38,6 @@ class Events < Plaza
   def get_event(index)
     Event.new( @json_data[index]['global_event'] )
   end
+  alias [] :get_event
   
 end
