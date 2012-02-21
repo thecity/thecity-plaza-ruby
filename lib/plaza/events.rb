@@ -27,7 +27,7 @@ class Events < Plaza
   def all_titles
     @json_data.collect { |event| event['global_event']['title'] }
   end
-  alias :titles, :all_titles
+  alias :titles :all_titles
   
   
   # Get the specified event.

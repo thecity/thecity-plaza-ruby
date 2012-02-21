@@ -27,7 +27,7 @@ class Albums < Plaza
   def all_titles
     @json_data.collect { |album| album['global_album']['title'] }
   end
-  alias :titles, :all_titles
+  alias :titles :all_titles
   
   
   # Get the specified album.

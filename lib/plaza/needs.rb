@@ -27,7 +27,7 @@ class Needs < Plaza
   def all_titles
     @json_data.collect { |need| need['global_need']['title'] }
   end
-  alias :titles, :all_titles
+  alias :titles :all_titles
   
   
   # Get the specified need.
