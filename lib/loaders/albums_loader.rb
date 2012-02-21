@@ -1,13 +1,14 @@
-# Project::    OnTheCity API 
+# Project::    Plaza-Ruby 
 # File::       albums_loader.rb
 #
-# Author:: Wes Hays <weshays@gbdev.com> 
-# Link:: https://github.com/weshays/onthecity-api-ruby
-# Version:: 1.0a
-# Package:: OnTheCity
-
+# Author:: Wes Hays <wes@onthecity.org> 
+# Link:: https://github.com/thecity/plaza-ruby
+# Version:: 0.1
+# Package:: TheCity
 
 # This class loads the Plaza albums for the subdomain.
+#
+# @package TheCity
 class AlbumsLoader 
 
   # Constructor.
@@ -19,7 +20,7 @@ class AlbumsLoader
     @class_key = 'albums'   
     
     # The URL to load the albums from. 
-    @url = "http://#{subdomain}.onthecity.org/plaza/albums?format=json"
+    @url = "http://#{subdomain}.onthecity.org/plaza/albums.json"
     
     # The object to store and load the cache.
     @cacher = cacher unless cacher.nil?    

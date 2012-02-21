@@ -2,14 +2,19 @@
 # *******************************************
 # This is a demo file to show usage.
 #
-# @package OnTheCity
-# @author Wes Hays <weshays@gbdev.com>
+# @package TheCity
+# @author Wes Hays <wes@onthecity.org>
 # ******************************************* 
 
-require File.dirname(__FILE__) + '/lib/on_the_city.rb'
+require File.dirname(__FILE__) + '/lib/the_city.rb'
 
-on_the_city = OnTheCity.new('livingstones', false);
+the_city = TheCity.new('livingstones', false);
 
-on_the_city.topics.all_titles.each { |t| puts t }
+#the_city.topics.all_titles.each { |t| puts t }
 
-on_the_city.topics.get_topic(1)
+
+topic = the_city.topics.get_topic(1)
+
+puts '--------------------------'
+puts "Topic: #{topic.title}\n\n"
+puts "Message: #{topic.content.strip}"

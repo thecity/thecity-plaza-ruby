@@ -3,11 +3,11 @@
 # end
 
 
-loaders_path = ONTHECITY_LIB_DIR + '/loaders/'
-cache_path = ONTHECITY_LIB_DIR + '/cachers/'
-cache_db_path = ONTHECITY_LIB_DIR  + '/cachers/db/'
-cache_file_path = ONTHECITY_LIB_DIR + '/cachers/file/'
-plaza_file_path = ONTHECITY_LIB_DIR + '/plaza/'
+loaders_path = THECITY_LIB_DIR + '/loaders/'
+cache_path = THECITY_LIB_DIR + '/cachers/'
+cache_db_path = THECITY_LIB_DIR  + '/cachers/db/'
+cache_file_path = THECITY_LIB_DIR + '/cachers/file/'
+plaza_file_path = THECITY_LIB_DIR + '/plaza/'
 
 require loaders_path + 'albums_loader.rb'
 require loaders_path + 'events_loader.rb'

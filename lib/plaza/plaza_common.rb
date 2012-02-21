@@ -1,17 +1,17 @@
-# Project:    OnTheCity API 
-# File:       plaza_common.rb
+# Project::    Plaza-Ruby 
+# File::       plaza_common.rb
 #
-# @author Wes Hays <weshays@gbdev.com> 
-# @link https://github.com/weshays/onthecity-api-php
-# @version 1.0a
-# @package OnTheCity
+# Author:: Wes Hays <wes@onthecity.org> 
+# Link:: https://github.com/thecity/plaza-ruby
+# Version:: 0.1
+# Package:: TheCity
 
 
  
 # This is the generic class to the common Plaza attributes.
 # (topic, prayer, need, event, album) will inherit from.
 #
-# @package OnTheCity
+# @package TheCity
 class PlazaCommon
 
   # Constructor.
@@ -22,35 +22,31 @@ class PlazaCommon
   end
     
     
-  #
   # @return The title of this plaza item.
   #
   def title
-    @data[:title]
+    @data['title']
   end
     
     
-  #
   # @return When this plaza item was created.
   #
   def created_at
-    @data[:created_at]
+    @data['created_at']
   end
 
 
-  #
   # @return The name of the person who made this plaza item.
   #
   def who_posted
-    @data[:user][:long_name]
+    @data['user']['long_name']
   end
     
     
-  #
   # @return The content of this plaza item.     
   #
   def content
-    self.clean_text( @data[:body] )
+    self.clean_text( @data['body'] )
   end
     
     
@@ -60,9 +56,9 @@ class PlazaCommon
    #
    # @return Clean text.
   def clean_text(text)
-    text.strip!
     text = text.gsub(%r{</?[^>]+?>}, '')
     ic_ignore = Iconv.new('US-ASCII//IGNORE', 'UTF-8')
+    text.strip!
     return ic_ignore.iconv(text)
   end
 

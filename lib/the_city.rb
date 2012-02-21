@@ -1,10 +1,10 @@
-# Project::    OnTheCity API 
-# File::       on_the_city.rb
+# Project::    Plaza-Ruby 
+# File::       the_city.rb
 #
-# Author:: Wes Hays <weshays@gbdev.com> 
-# Link:: https://github.com/weshays/onthecity-api-ruby
-# Version:: 1.0a
-# Package:: OnTheCity
+# Author:: Wes Hays <wes@onthecity.org> 
+# Link:: https://github.com/thecity/plaza-ruby
+# Version:: 0.1
+# Package:: TheCity
 
 require 'rubygems'
 require 'json'
@@ -12,17 +12,19 @@ require 'open-uri'
 
 
 # The path to the lib directory.
-ONTHECITY_LIB_DIR = File.dirname(__FILE__)
+THECITY_LIB_DIR = File.dirname(__FILE__)
   
 # The path to the storage directory that will be used for caching data to disk.
-ONTHECITY_STORAGE_DIR = File.dirname(__FILE__) + '/../storage/'
+THECITY_STORAGE_DIR = File.dirname(__FILE__) + '/../storage/'
 
 
 require File.dirname(__FILE__) + '/auto_load.rb'
 
 
-# This class is meant to be a wrapper for the OnTheCity.org API.
-class OnTheCity
+# This class is meant to be a wrapper for the OnTheCity.org Plaza API.
+#
+# @package TheCity
+class TheCity
 
   # Constructor.
   #

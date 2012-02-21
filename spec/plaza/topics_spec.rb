@@ -1,6 +1,6 @@
 require "#{File.dirname(__FILE__)}/../spec_helper"
 
-describe 'OnTheCity::Plaza::Topics' do
+describe 'TheCity::Plaza::Topics' do
 
   it 'should create an instance successfully with valid arguments' do
     subdomain = 'livingstones'

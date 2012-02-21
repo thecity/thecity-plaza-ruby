@@ -1,15 +1,15 @@
-# Project::    OnTheCity API 
+# Project::    Plaza-Ruby 
 # File::       albums.rb
 #
-# Author:: Wes Hays <weshays@gbdev.com> 
-# Link:: https://github.com/weshays/onthecity-api-ruby
-# Version:: 1.0a
-# Package:: OnTheCity
+# Author:: Wes Hays <wes@onthecity.org> 
+# Link:: https://github.com/thecity/plaza-ruby
+# Version:: 0.1
+# Package:: TheCity
 
 
 # This class is a wrapper for the albums page.
 #
-# @package OnTheCity
+# @package TheCity
 class Albums < Plaza 
 
   # Constructor.
@@ -25,7 +25,7 @@ class Albums < Plaza
   #
   # @return array of prayers.
   def all_titles
-    @json_data.collect { |album| album['title'] }
+    @json_data.collect { |album| album['global_album']['title'] }
   end
   
   
@@ -35,7 +35,7 @@ class Albums < Plaza
   #
   # @return Album
   def get_album(index)
-    Album.new( @json_data[index] )
+    Album.new( @json_data[index]['global_album'] )
   end
   
 end

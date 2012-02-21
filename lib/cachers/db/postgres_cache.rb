@@ -1,15 +1,15 @@
-# Project::    OnTheCity API 
-# File::       postgresql_cache.rb
+# Project::    Plaza-Ruby 
+# File::       postgres_cache.rb
 #
-# Author:: Wes Hays <weshays@gbdev.com> 
-# Link:: https:github.com/weshays/onthecity-api-ruby
-# Version:: 1.0a
-# Package:: OnTheCity
+# Author:: Wes Hays <wes@onthecity.org> 
+# Link:: https://github.com/thecity/plaza-ruby
+# Version:: 0.1
+# Package:: TheCity
 
 
 # This class caches the data in a postgresql database.
 #
-# @package OnTheCity
+# @package TheCity
 class PostgresCache < CacheAdapter 
 
   # Constructor.

@@ -1,15 +1,15 @@
-# Project::    OnTheCity API 
+# Project::    Plaza-Ruby 
 # File::       album.rb
 #
-# Author:: Wes Hays <weshays@gbdev.com> 
-# Link:: https:github.com/weshays/onthecity-api-ruby
-# Version:: 1.0a
-# Package:: OnTheCity
+# Author:: Wes Hays <wes@onthecity.org> 
+# Link:: https://github.com/thecity/plaza-ruby
+# Version:: 0.1
+# Package:: TheCity
 
 
 # A album instance.  This object is immutable.
 #
-# @package OnTheCity
+# @package TheCity
 class Album < PlazaCommon 
     
   # Constructor.

@@ -1,6 +1,6 @@
 require "#{File.dirname(__FILE__)}/../spec_helper"
 
-describe 'OnTheCity::PlazaCommon' do
+describe 'TheCity::PlazaCommon' do
 
   it 'should raise something if something bad happened' 
   

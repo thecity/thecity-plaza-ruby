@@ -1,15 +1,15 @@
-# Project::    OnTheCity API 
+# Project::    Plaza-Ruby 
 # File::       prayers.rb
 #
-# Author:: Wes Hays <weshays@gbdev.com> 
-# Link:: https://github.com/weshays/onthecity-api-ruby
-# Version:: 1.0a
-# Package:: OnTheCity
+# Author:: Wes Hays <wes@onthecity.org> 
+# Link:: https://github.com/thecity/plaza-ruby
+# Version:: 0.1
+# Package:: TheCity
 
 
 # This class is a wrapper for the prayers page.
 #
-# @package OnTheCity
+# @package TheCity
 class Prayers < Plaza 
 
   # Constructor.
@@ -25,7 +25,7 @@ class Prayers < Plaza
   #
   # @return array of prayers.
   def all_titles
-    @json_data.collect { |prayer| prayer['title'] }
+    @json_data.collect { |prayer| prayer['global_prayer']['title'] }
   end
   
   
@@ -35,7 +35,7 @@ class Prayers < Plaza
   #
   # @return Prayer
   def get_prayer(index)
-    Prayer.new( @json_data[index] )
+    Prayer.new( @json_data[index]['global_prayer'] )
   end
   
 end

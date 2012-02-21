@@ -10,7 +10,7 @@ require 'rubygems'
 require 'rspec'
 require 'ruby-debug'
 
-require File.expand_path( File.dirname(__FILE__) + '/../lib/on_the_city.rb')
+require File.expand_path( File.dirname(__FILE__) + '/../lib/the_city.rb')
 
 
 RSpec.configure do |config|

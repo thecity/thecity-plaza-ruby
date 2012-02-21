@@ -11,7 +11,7 @@ class TopicsLoaderStaging
     @class_key = 'topics'   
     
     # The URL to load the topics from. 
-    @url = "http://#{subdomain}.stagethecity.org/plaza/topics?format=json"
+    @url = "http://#{subdomain}.stagethecity.org/plaza/topics.json"
     
     # The object to store and load the cache.
     @cacher = cacher unless cacher.nil?    

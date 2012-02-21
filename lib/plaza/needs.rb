@@ -1,15 +1,15 @@
-# Project::    OnTheCity API 
+# Project::    Plaza-Ruby 
 # File::       needs.rb
 #
-# Author:: Wes Hays <weshays@gbdev.com> 
-# Link:: https://github.com/weshays/onthecity-api-ruby
-# Version:: 1.0a
-# Package:: OnTheCity
+# Author:: Wes Hays <wes@onthecity.org> 
+# Link:: https://github.com/thecity/plaza-ruby
+# Version:: 0.1
+# Package:: TheCity
 
 
 # This class is a wrapper for the needs page.
 #
-# @package OnTheCity
+# @package TheCity
 class Needs < Plaza 
 
   # Constructor.
@@ -25,7 +25,7 @@ class Needs < Plaza
   #
   # @return array of prayers.
   def all_titles
-    @json_data.collect { |need| need['title'] }
+    @json_data.collect { |need| need['global_need']['title'] }
   end
   
   
@@ -35,7 +35,7 @@ class Needs < Plaza
   #
   # @return Need
   def get_need(index)
-    Need.new( @json_data[index] )
+    Need.new( @json_data[index]['global_need'] )
   end
   
 end

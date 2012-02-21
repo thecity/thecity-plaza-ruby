@@ -1,17 +1,17 @@
-# Project:    OnTheCity API 
-# File:       plaza.rb
+# Project::    Plaza-Ruby 
+# File::       plaza.rb
 #
-# @author Wes Hays <weshays@gbdev.com> 
-# @link https://github.com/weshays/onthecity-api-php
-# @version 1.0a
-# @package OnTheCity
+# Author:: Wes Hays <wes@onthecity.org> 
+# Link:: https://github.com/thecity/plaza-ruby
+# Version:: 0.1
+# Package:: TheCity
 
 
  
 # This is the generic class to the common Plaza attributes.
 # (topic, prayer, need, event, album) will inherit from.
 #
-# @package OnTheCity
+# @package TheCity
 class Plaza
 
   # Constructor.

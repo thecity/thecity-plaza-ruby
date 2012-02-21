@@ -1,13 +1,15 @@
-# Project::    OnTheCity API 
-# File::       prayers_loader.rb
+# Project::    Plaza-Ruby 
+# File::       payers_loader.rb
 #
-# Author:: Wes Hays <weshays@gbdev.com> 
-# Link:: https://github.com/weshays/onthecity-api-ruby
-# Version:: 1.0a
-# Package:: OnTheCity
+# Author:: Wes Hays <wes@onthecity.org> 
+# Link:: https://github.com/thecity/plaza-ruby
+# Version:: 0.1
+# Package:: TheCity
 
 
 # This class loads the Plaza prayers for the subdomain.
+#
+# @package TheCity
 class PrayersLoader 
 
   # Constructor.
@@ -19,7 +21,7 @@ class PrayersLoader
     @class_key = 'prayers'   
     
     # The URL to load the prayers from. 
-    @url = "http://#{subdomain}.onthecity.org/plaza/prayers?format=json"
+    @url = "http://#{subdomain}.onthecity.org/plaza/prayers.json"
     
     # The object to store and load the cache.
     @cacher = cacher unless cacher.nil?    

@@ -1,15 +1,15 @@
-# Project::    OnTheCity API 
+# Project::    Plaza-Ruby 
 # File::       json_cache.rb
 #
-# Author:: Wes Hays <weshays@gbdev.com> 
-# Link:: https:github.com/weshays/onthecity-api-ruby
-# Version:: 1.0a
-# Package:: OnTheCity
+# Author:: Wes Hays <wes@onthecity.org> 
+# Link:: https://github.com/thecity/plaza-ruby
+# Version:: 0.1
+# Package:: TheCity
 
 
 # This class caches the data in a postgresql database.
 #
-# @package OnTheCity
+# @package TheCity
 class JsonCache < CacheAdapter 
 
   # Constructor.
@@ -18,7 +18,7 @@ class JsonCache < CacheAdapter
   def initialize(subdomain) 
     super
     @subdomain = subdomain
-    @cache_dir = ONTHECITY_STORAGE_DIR + subdomain + '/';
+    @cache_dir = THECITY_STORAGE_DIR + subdomain + '/';
   end
   
 
@@ -104,7 +104,7 @@ class JsonCache < CacheAdapter
 	# @ignore
   def create_cache_directory_if_needed
     unless File.exist?( @cache_dir ) 
-      unless Dir.mkdir( @cache_dir ) 
+      unless FileUtils.mkdir_p( @cache_dir ) 
         raise new Exception('Failed to create cache directory')
       end
     end

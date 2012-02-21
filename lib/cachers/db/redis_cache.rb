@@ -1,15 +1,15 @@
-# Project::    OnTheCity API 
+# Project::    Plaza-Ruby 
 # File::       redis_cache.rb
 #
-# Author:: Wes Hays <weshays@gbdev.com> 
-# Link:: https:github.com/weshays/onthecity-api-ruby
-# Version:: 1.0a
-# Package:: OnTheCity
+# Author:: Wes Hays <wes@onthecity.org> 
+# Link:: https://github.com/thecity/plaza-ruby
+# Version:: 0.1
+# Package:: TheCity
 
 
 # This class caches the data in a redis key-value store.
 #
-# @package OnTheCity
+# @package TheCity
 class RedisCache < CacheAdapter 
 
   # Constructor.

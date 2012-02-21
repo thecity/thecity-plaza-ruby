@@ -1,13 +1,15 @@
-# Project::    OnTheCity API 
+# Project::    Plaza-Ruby 
 # File::       events_loader.rb
 #
-# Author:: Wes Hays <weshays@gbdev.com> 
-# Link:: https://github.com/weshays/onthecity-api-ruby
-# Version:: 1.0a
-# Package:: OnTheCity
+# Author:: Wes Hays <wes@onthecity.org> 
+# Link:: https://github.com/thecity/plaza-ruby
+# Version:: 0.1
+# Package:: TheCity
 
 
 # This class loads the Plaza events for the subdomain.
+#
+# @package TheCity
 class EventsLoader 
 
   # Constructor.
@@ -19,7 +21,7 @@ class EventsLoader
     @class_key = 'events'   
     
     # The URL to load the events from. 
-    @url = "http://#{subdomain}.onthecity.org/plaza/events?format=json"
+    @url = "http://#{subdomain}.onthecity.org/plaza/events.json"
     
     # The object to store and load the cache.
     @cacher = cacher unless cacher.nil?    
