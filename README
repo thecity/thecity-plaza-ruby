@@ -21,12 +21,6 @@ Clone, fork or download the package.
   the_city = TheCity.new('mychurch')
   topics = the_city.topics
   
-
-== WordPress
-
-If you use WordPress there is a WordPress plugin that uses this library.
-https://github.com/weshays/onthecity-wordpress  
-  
   
 == Contributing
 
