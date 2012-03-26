@@ -18,6 +18,13 @@ class Album < PlazaCommon
   def initialize(data) 
     super(data)
   end
+  
+
+  # @return The ID of this album.
+  #
+  def id
+    @data['auid'].nil? ? '' : @data['auid']
+  end
     
     
   # @return The responses to the album.

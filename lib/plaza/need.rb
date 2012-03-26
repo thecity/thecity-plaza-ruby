@@ -19,6 +19,13 @@ class Need < PlazaCommon
     super(data)
   end
     
+
+  # @return The ID of this need.
+  #
+  def id
+    @data['nuid'].nil? ? '' : @data['nuid']
+  end
+
     
 	# @return The responses to the need.
 	def posts

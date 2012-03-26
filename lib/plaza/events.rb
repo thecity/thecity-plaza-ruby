@@ -35,9 +35,9 @@ class Events < Plaza
   # @param index The index of the event to get all the information for.
   #
   # @return Event
-  def get_event(index)
+  def select(index)
     Event.new( @json_data[index]['global_event'] )
   end
-  alias [] :get_event
+  alias [] :select
   
 end

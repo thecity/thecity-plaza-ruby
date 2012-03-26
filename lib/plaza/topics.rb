@@ -35,9 +35,9 @@ class Topics < Plaza
   # @param index The index of the topic to get all the information for.
   #
   # @return Topic
-  def get_topic(index)
+  def select(index)
     Topic.new( @json_data[index]['global_topic'] )
   end
-  alias [] :get_topic
+  alias [] :select
   
 end

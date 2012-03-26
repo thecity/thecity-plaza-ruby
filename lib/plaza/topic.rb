@@ -18,6 +18,13 @@ class Topic < PlazaCommon
   def initialize(data) 
     super(data)
   end
+
+
+  # @return The ID of this topic.
+  #
+  def id
+    @data['tuid'].nil? ? '' : @data['tuid']
+  end
     
     
 	# @return The responses to the topic.

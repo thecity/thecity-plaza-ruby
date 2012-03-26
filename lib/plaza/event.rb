@@ -19,6 +19,13 @@ class Event < PlazaCommon
     super(data)
   end
     
+
+  # @return The ID of this event.
+  #
+  def id
+    @data['euid'].nil? ? '' : @data['euid']
+  end
+
     
 	# @return The responses to the topic.
 	def posts

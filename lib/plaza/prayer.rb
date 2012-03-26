@@ -18,6 +18,13 @@ class Prayer < PlazaCommon
   def initialize(data) 
     super(data)
   end
+
+
+  # @return The ID of this prayer.
+  #
+  def id
+    @data['puid'].nil? ? '' : @data['puid']
+  end
     
     
 	# @return The responses to the prayer.

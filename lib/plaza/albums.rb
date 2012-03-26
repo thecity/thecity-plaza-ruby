@@ -35,9 +35,9 @@ class Albums < Plaza
   # @param index The index of the album to get all the information for.
   #
   # @return Album
-  def get_album(index)
+  def select(index)
     Album.new( @json_data[index]['global_album'] )
   end
-  alias [] :get_album
+  alias [] :select
   
 end

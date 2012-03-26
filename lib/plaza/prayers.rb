@@ -35,10 +35,10 @@ class Prayers < Plaza
   # @param index The index of the prayer to get all the information for.
   #
   # @return Prayer
-  def get_prayer(index)
+  def select(index)
     Prayer.new( @json_data[index]['global_prayer'] )
   end
-  alias [] :get_prayer
+  alias [] :select
   
 end
 

@@ -35,10 +35,10 @@ class Needs < Plaza
   # @param index The index of the need to get all the information for.
   #
   # @return Need
-  def get_need(index)
+  def select(index)
     Need.new( @json_data[index]['global_need'] )
   end
-  alias [] :get_need
+  alias [] :select
   
 end
 

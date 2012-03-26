@@ -1,2 +1,39 @@
-View library usage here
-http://thecity.github.com/thecity-plaza/plaza-ruby/
+= The City Plaza Ruby Library
+
+This Ruby library is meant to be used with The City (Software to enable communication and community in your church).
+
+It is possible to pull church needs, topics, events, prayers and albums from the Plaza so that you can use them as necessary.
+
+Data pulled from The City is by default cached for 1 day (24 hours) so that subsequent requests are faster.
+
+TheCity API docs
+http://thecity.zendesk.com/entries/359458-using-the-plaza-json-api
+
+
+== Installing
+Clone, fork or download the package.
+
+== Usage
+
+=== Basic usage
+
+  require 'lib/the_city.rb'
+  the_city = TheCity.new('mychurch')
+  topics = the_city.topics
+  
+
+== WordPress
+
+If you use WordPress there is a WordPress plugin that uses this library.
+https://github.com/weshays/onthecity-wordpress  
+  
+  
+== Contributing
+
+If you want to help out fork the project and send me a pull request.  You can also send me feature requests.
+  
+  
+== License
+
+This plugin is released under the MIT license. Please contact weshays
+(http://github.com/weshays) for any questions.
