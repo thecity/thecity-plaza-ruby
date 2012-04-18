@@ -26,6 +26,20 @@ class Event < PlazaCommon
     @data['euid'].nil? ? '' : @data['euid']
   end
 
+
+  # @return When this event starts.
+  #
+  def starting_at
+    @data['starting_at']
+  end
+
+
+  # @return When this event ends.
+  #
+  def ending_at
+    @data['ending_at']
+  end
+
     
 	# @return The responses to the topic.
 	def posts
