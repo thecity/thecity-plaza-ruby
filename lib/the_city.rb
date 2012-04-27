@@ -142,7 +142,7 @@ class TheCity
     return @albums if @albums_num_requested == num_per_page and !@albums.nil?   
     @albums_num_requested = num_per_page; 
     loader = AlbumsLoader.new( @subdomain, num_per_page, @cacher )    
-    @albums = Ablums.new( loader );
+    @albums = Albums.new( loader );
     return @albums
   end
   
