@@ -26,7 +26,7 @@ topics = the_city.topics
 # limit the amount of topics fetched from The City.
 topics = the_city.topics(3)    
 
-# Get event.
+# Get topic.
 topic = topics.select(2)
 
 
@@ -52,7 +52,7 @@ prayers = the_city.prayers
 # limit the amount of prayers fetched from The City  
 prayers = the_city.prayers(3)
 
-# Get event.
+# Get prayer.
 prayer = prayers.select(2)
 
 
@@ -65,7 +65,7 @@ needs = the_city.needs
 # limit the amount of needs fetched from The City   
 needs = the_city.needs(3)
 
-# Get event.
+# Get need.
 need = needs.select(2)
 
 ## Albums
@@ -77,7 +77,7 @@ albums = the_city.albums
 # limit the amount of albums fetched from The City  
 albums = the_city.albums(3)
 
-# Get event.
+# Get album.
 album = albums.select(2)
 
 
