@@ -36,8 +36,7 @@ class Topics < Plaza
   #
   # @return Topic
   def select(index)
-    Topic.new( @json_data[index]['global_topic'] )
+    Topic.new( @json_data[index]['global_topic'] ) if @json_data[index]
   end
-  alias [] :select
   
 end

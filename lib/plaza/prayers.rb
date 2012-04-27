@@ -36,9 +36,8 @@ class Prayers < Plaza
   #
   # @return Prayer
   def select(index)
-    Prayer.new( @json_data[index]['global_prayer'] )
+    Prayer.new( @json_data[index]['global_prayer'] ) if @json_data[index]
   end
-  alias [] :select
   
 end
 

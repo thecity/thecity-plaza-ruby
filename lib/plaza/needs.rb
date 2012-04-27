@@ -36,9 +36,8 @@ class Needs < Plaza
   #
   # @return Need
   def select(index)
-    Need.new( @json_data[index]['global_need'] )
+    Need.new( @json_data[index]['global_need'] ) if @json_data[index]
   end
-  alias [] :select
   
 end
 

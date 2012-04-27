@@ -26,6 +26,9 @@ topics = the_city.topics
 # limit the amount of topics fetched from The City.
 topics = the_city.topics(3)    
 
+# Get event.
+topic = topics.select(2)
+
 
 ## Load Events
 array_of_event_titles = the_city.events.titles
@@ -35,6 +38,9 @@ events = the_city.events
 
 # limit the amount of events fetched from The City  
 events = the_city.events(3)
+
+# Get event.
+event = events.select(2)
 
 
 ## Load Prayers
@@ -46,6 +52,9 @@ prayers = the_city.prayers
 # limit the amount of prayers fetched from The City  
 prayers = the_city.prayers(3)
 
+# Get event.
+prayer = prayers.select(2)
+
 
 ## Load Needs
 array_of_need_titles = the_city.prayers.titles
@@ -56,6 +65,8 @@ needs = the_city.needs
 # limit the amount of needs fetched from The City   
 needs = the_city.needs(3)
 
+# Get event.
+need = needs.select(2)
 
 ## Albums
 array_of_album_titles = the_city.albums.titles
@@ -65,5 +76,8 @@ albums = the_city.albums
 
 # limit the amount of albums fetched from The City  
 albums = the_city.albums(3)
+
+# Get event.
+album = albums.select(2)
 
 

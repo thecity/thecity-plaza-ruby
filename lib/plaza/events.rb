@@ -36,8 +36,7 @@ class Events < Plaza
   #
   # @return Event
   def select(index)
-    Event.new( @json_data[index]['global_event'] )
+    Event.new( @json_data[index]['global_event'] ) if @json_data[index]
   end
-  alias [] :select
   
 end

@@ -36,8 +36,7 @@ class Albums < Plaza
   #
   # @return Album
   def select(index)
-    Album.new( @json_data[index]['global_album'] )
+    Album.new( @json_data[index]['global_album'] ) if @json_data[index]
   end
-  alias [] :select
   
 end
