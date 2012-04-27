@@ -15,14 +15,15 @@ class EventsLoader
   # Constructor.
   #
   # <b>subdomain</b> The church subdomain.
+  # <b>num_per_page</b> The number of items to show.  Max is 15. Default is 10.
   # <b>CacheAdapter cacher</b> The cacher to be used to cache data.
   #/
-  def initialize(subdomain, cacher = nil) 
-    @class_key = 'events'   
+  def initialize(subdomain, num_per_page = 10, cacher = nil) 
+    @class_key = "events_#{num_per_page}"
     
     # The URL to load the events from. 
-    @url = "http://#{subdomain}.onthecity.org/plaza/events.json"
-    
+    @url = "http://#{subdomain}.onthecity.org/plaza/events.json?per_page=#{num_per_page}"
+
     # The object to store and load the cache.
     @cacher = cacher unless cacher.nil?    
   end

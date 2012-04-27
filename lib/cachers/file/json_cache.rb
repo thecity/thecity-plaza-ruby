@@ -6,6 +6,7 @@
 # Version:: 0.1
 # Package:: TheCity
 
+require 'fileutils'
 
 # This class caches the data in a postgresql database.
 #
@@ -46,6 +47,16 @@ class JsonCache < CacheAdapter
 
 		return true		
 	end
+
+
+  # Get the file name where the cache is stored.
+  #
+  # @param string $key The key used for the cache.
+  #
+  # @return mixed Returns the name of the cache file if found or false.
+  def get_cache_file(key)
+    find_file_key(key)
+  end
 
 
 	# Get the data from the cache.
