@@ -6,6 +6,7 @@
 # Version:: 0.1
 # Package:: TheCity
 
+require 'iconv'
 
  
 # This is the generic class to the common Plaza attributes.
