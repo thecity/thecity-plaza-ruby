@@ -20,4 +20,14 @@ class Plaza
   def initialize
   end
     
+
+  # Get the number of items present.
+  #
+  # @return integer The number of items present.
+  def size
+    @json_data.size
+  end
+  alias :length :size
+  alias :count :size
+
 end
