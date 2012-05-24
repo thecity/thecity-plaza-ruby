@@ -57,10 +57,14 @@ class PlazaCommon
    #
    # @return Clean text.
   def clean_text(text)
-    text = text.gsub(%r{</?[^>]+?>}, '')
-    ic_ignore = Iconv.new('US-ASCII//IGNORE', 'UTF-8')
+    text = text.gsub(%r{</?[^>]+?>}, '')    
     text.strip!
-    return ic_ignore.iconv(text)
+    begin
+      ic_ignore = Iconv.new('US-ASCII//IGNORE', 'UTF-8')
+      ic_ignore.iconv(text)
+    rescue
+      text
+    end
   end
 
 
