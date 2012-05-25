@@ -37,6 +37,13 @@ class PlazaCommon
   end
 
 
+  # @return When this plaza item was last updated.
+  #
+  def created_at
+    @data['updated_at']
+  end
+
+
   # @return The name of the person who made this plaza item.
   #
   def who_posted
