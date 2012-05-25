@@ -14,6 +14,8 @@
 # @package TheCity
 class Plaza
 
+  include Enumerable
+
   # Constructor.
   #
   # @param array $data a Hash containing all the data to initialize this object.  

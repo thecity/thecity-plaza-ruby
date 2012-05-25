@@ -39,4 +39,10 @@ class Albums < Plaza
     Album.new( @json_data[index]['global_album'] ) if @json_data[index]
   end
   
+
+  # This method is needed for Enumerable.
+  def each &block
+    @json_data.each { |album| yield( Album.new( album['global_album'] ) )}  
+  end    
+
 end

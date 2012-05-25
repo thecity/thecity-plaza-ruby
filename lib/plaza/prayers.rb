@@ -38,6 +38,12 @@ class Prayers < Plaza
   def select(index)
     Prayer.new( @json_data[index]['global_prayer'] ) if @json_data[index]
   end
+
+
+  # This method is needed for Enumerable.
+  def each &block
+    @json_data.each { |prayer| yield( Prayer.new( prayer['global_prayer'] ) )}  
+  end    
   
 end
 

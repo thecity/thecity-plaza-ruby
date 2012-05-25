@@ -38,5 +38,11 @@ class Events < Plaza
   def select(index)
     Event.new( @json_data[index]['global_event'] ) if @json_data[index]
   end
+
+
+  # This method is needed for Enumerable.
+  def each &block
+    @json_data.each { |event| yield( Event.new( event['global_event'] ) )}  
+  end    
   
 end

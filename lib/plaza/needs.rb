@@ -39,5 +39,11 @@ class Needs < Plaza
     Need.new( @json_data[index]['global_need'] ) if @json_data[index]
   end
   
+
+  # This method is needed for Enumerable.
+  def each &block
+    @json_data.each { |need| yield( Need.new( need['global_need'] ) )}  
+  end  
+
 end
 

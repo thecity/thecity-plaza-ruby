@@ -39,4 +39,10 @@ class Topics < Plaza
     Topic.new( @json_data[index]['global_topic'] ) if @json_data[index]
   end
   
+
+  # This method is needed for Enumerable.
+  def each &block
+    @json_data.each { |topic| yield( Topic.new( topic['global_topic'] ) )}
+  end    
+
 end
