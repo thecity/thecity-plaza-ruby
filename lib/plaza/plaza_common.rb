@@ -19,7 +19,7 @@ class PlazaCommon
   #
   # @param array $data a Hash containing all the data to initialize this object.  
   def initialize(data)
-    @data = data
+    @data = data.nil? ? {} : data
   end
     
     
