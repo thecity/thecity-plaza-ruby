@@ -39,7 +39,7 @@ class PlazaCommon
 
   # @return When this plaza item was last updated.
   #
-  def created_at
+  def updated_at
     @data['updated_at']
   end
 
