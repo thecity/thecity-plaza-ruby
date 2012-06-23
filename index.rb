@@ -15,6 +15,8 @@ require File.dirname(__FILE__) + '/lib/the_city.rb'
 # Second param is whether or not to cache the data.
 the_city = TheCity.new('vintage21', true)
 
+# Set the group nickname to pull plaza items for.
+# http://helpdesk.onthecity.org/entries/422776-group-nickname
 the_city.set_group_nickname('@v21west')
 
 ## Load Topics
