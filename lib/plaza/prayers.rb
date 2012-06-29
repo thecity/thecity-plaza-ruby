@@ -2,8 +2,7 @@
 # File::       prayers.rb
 #
 # Author:: Wes Hays <wes@onthecity.org> 
-# Link:: https://github.com/thecity/plaza-ruby
-# Version:: 0.1
+# Link:: https://github.com/thecity/thecity-plaza-ruby
 # Package:: TheCity
 
 

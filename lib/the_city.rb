@@ -73,6 +73,16 @@ class TheCity
     if cache_data === true
       @cacher = cacher.nil? ? JsonCache.new(subdomain) : cacher
     end
+
+    @group_nickname = nil
+  end
+
+
+  # Set the group nickname and only pull from that groups items.
+  #
+  # <b>nickname</b> The nickname of the group to pull items from the plaza items.
+  def set_group_nickname(nickname)
+    @group_nickname = nickname
   end
 
 
@@ -85,7 +95,7 @@ class TheCity
   def topics(num_per_page = 10)
     return @topics if @topics_num_requested == num_per_page and !@topics.nil?  
     @topics_num_requested = num_per_page; 
-    loader = TopicsLoader.new( @subdomain, num_per_page, @cacher )    
+    loader = TopicsLoader.new( @subdomain, num_per_page, @cacher, @group_nickname )    
     @topics = Topics.new( loader );
     return @topics
   end
@@ -99,7 +109,7 @@ class TheCity
   def needs(num_per_page = 10)
     return @needs if @needs_num_requested == num_per_page and !@needs.nil?  
     @needs_num_requested = num_per_page; 
-    loader = NeedsLoader.new( @subdomain, num_per_page, @cacher )    
+    loader = NeedsLoader.new( @subdomain, num_per_page, @cacher, @group_nickname )    
     @needs = Needs.new( loader );
     return @needs
   end
@@ -113,7 +123,7 @@ class TheCity
   def prayers(num_per_page = 10)
     return @prayers if @prayers_num_requested == num_per_page and !@prayers.nil?   
     @prayers_num_requested = num_per_page; 
-    loader = PrayersLoader.new( @subdomain, num_per_page, @cacher )    
+    loader = PrayersLoader.new( @subdomain, num_per_page, @cacher, @group_nickname )    
     @prayers = Prayers.new( loader );
     return @prayers
   end
@@ -127,7 +137,7 @@ class TheCity
   def events(num_per_page = 10)
     return @events if @events_num_requested == num_per_page and !@events.nil?
     @events_num_requested = num_per_page; 
-    loader = EventsLoader.new( @subdomain, num_per_page, @cacher )    
+    loader = EventsLoader.new( @subdomain, num_per_page, @cacher, @group_nickname )    
     @events = Events.new( loader );
     return @events
   end
@@ -141,7 +151,7 @@ class TheCity
   def albums(num_per_page = 10)
     return @albums if @albums_num_requested == num_per_page and !@albums.nil?   
     @albums_num_requested = num_per_page; 
-    loader = AlbumsLoader.new( @subdomain, num_per_page, @cacher )    
+    loader = AlbumsLoader.new( @subdomain, num_per_page, @cacher, @group_nickname )    
     @albums = Albums.new( loader );
     return @albums
   end
