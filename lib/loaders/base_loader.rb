@@ -24,6 +24,27 @@ class BaseLoader
     group_name.downcase.strip
   end
 
+
+  # Loads items.
+  #
+  # Returns the data loaded in a JSON object.
+  def load_feed
+    unless @cacher.nil? or @cacher.is_cache_expired?( @class_key )
+      return @cacher.get_data( @class_key )
+    end   
+
+    json = open(@url).read
+    begin
+      data = JSON.parse(json)    
+    rescue
+      data = []
+    end
+
+    @cacher.save_data(@class_key, data) unless @cacher.nil?      
+
+    return data
+  end 
+
 end
 
 

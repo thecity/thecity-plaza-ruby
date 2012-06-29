@@ -30,21 +30,4 @@ class NeedsLoader < BaseLoader
     @cacher = cacher unless cacher.nil?    
   end
 
-
-  # Loads all the needs on the Plaza for the subdomain.
-  #
-  # Returns the data loaded in a JSON object.
-  def load_feed
-    unless @cacher.nil? or @cacher.is_cache_expired?( @class_key )
-      return @cacher.get_data( @class_key )
-    end   
-
-    json = open(@url).read
-    data = JSON.parse(json)    
-
-    @cacher.save_data(@class_key, data) unless @cacher.nil?      
-
-    return data
-  end 
-
 end
