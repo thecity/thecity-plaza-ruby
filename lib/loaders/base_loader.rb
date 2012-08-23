@@ -11,8 +11,9 @@
 class BaseLoader 
 
   # Constructor
-  def initialize() 
-    # Do nothing
+  def initialize(*ignore_these)
+    # Paramters that may be used by the system now or in the future.
+    @other_url_params = ''
   end
 
 
@@ -25,6 +26,15 @@ class BaseLoader
   end
 
 
+  # Adds additional url params to be sent to the server.  These may be used by the system
+  # now or in the future.
+  #
+  # <b>url_params</b> The additional params to send to the server.
+  def add_url_params(url_params)
+    @other_url_params = url_params
+  end
+
+
   # Loads items.
   #
   # Returns the data loaded in a JSON object.
@@ -32,6 +42,8 @@ class BaseLoader
     unless @cacher.nil? or @cacher.is_cache_expired?( @class_key )
       return @cacher.get_data( @class_key )
     end   
+
+    @url += "&#{@other_url_params}" unless @other_url_params.empty?
 
     json = open(@url).read
     begin

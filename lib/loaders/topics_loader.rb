@@ -18,6 +18,7 @@ class TopicsLoader < BaseLoader
   # <b>CacheAdapter cacher</b> The cacher to be used to cache data.
   # <b>group_nickname</b> (optional) The group to get plaza items for.
   def initialize(subdomain, num_per_page = 10, cacher = nil, group_nickname = nil) 
+    super
     group_nickname = clean_group_nickname(group_nickname)
     nickname = group_nickname.empty? ? '' : '/'+group_nickname
 

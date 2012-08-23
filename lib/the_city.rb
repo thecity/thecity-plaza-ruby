@@ -66,6 +66,8 @@ class TheCity
     # The last number of topics requested.
     @topics_num_requested = 0
 
+    # Paramters that may be used by the system now or in the future.
+    @other_url_params = ''
     
     # The object to store and load the cache.
     @cacher = nil
@@ -76,6 +78,16 @@ class TheCity
 
     @group_nickname = nil
   end
+
+
+  # Adds additional url params to be sent to the server.  These may be used by the system
+  # now or in the future.
+  #
+  # <b>url_params</b> The additional params to send to the server.
+  def add_url_params(url_params)
+    @other_url_params = url_params
+  end
+
 
 
   # Set the group nickname and only pull from that groups items.
@@ -95,7 +107,8 @@ class TheCity
   def topics(num_per_page = 10)
     return @topics if @topics_num_requested == num_per_page and !@topics.nil?  
     @topics_num_requested = num_per_page; 
-    loader = TopicsLoader.new( @subdomain, num_per_page, @cacher, @group_nickname )    
+    loader = TopicsLoader.new( @subdomain, num_per_page, @cacher, @group_nickname )
+    loader.add_url_params(@other_url_params)
     @topics = Topics.new( loader );
     return @topics
   end
@@ -109,7 +122,8 @@ class TheCity
   def needs(num_per_page = 10)
     return @needs if @needs_num_requested == num_per_page and !@needs.nil?  
     @needs_num_requested = num_per_page; 
-    loader = NeedsLoader.new( @subdomain, num_per_page, @cacher, @group_nickname )    
+    loader = NeedsLoader.new( @subdomain, num_per_page, @cacher, @group_nickname )
+    loader.add_url_params(@other_url_params)
     @needs = Needs.new( loader );
     return @needs
   end
@@ -123,7 +137,8 @@ class TheCity
   def prayers(num_per_page = 10)
     return @prayers if @prayers_num_requested == num_per_page and !@prayers.nil?   
     @prayers_num_requested = num_per_page; 
-    loader = PrayersLoader.new( @subdomain, num_per_page, @cacher, @group_nickname )    
+    loader = PrayersLoader.new( @subdomain, num_per_page, @cacher, @group_nickname )
+    loader.add_url_params(@other_url_params)
     @prayers = Prayers.new( loader );
     return @prayers
   end
@@ -137,7 +152,8 @@ class TheCity
   def events(num_per_page = 10)
     return @events if @events_num_requested == num_per_page and !@events.nil?
     @events_num_requested = num_per_page; 
-    loader = EventsLoader.new( @subdomain, num_per_page, @cacher, @group_nickname )    
+    loader = EventsLoader.new( @subdomain, num_per_page, @cacher, @group_nickname )
+    loader.add_url_params(@other_url_params)
     @events = Events.new( loader );
     return @events
   end
@@ -151,7 +167,8 @@ class TheCity
   def albums(num_per_page = 10)
     return @albums if @albums_num_requested == num_per_page and !@albums.nil?   
     @albums_num_requested = num_per_page; 
-    loader = AlbumsLoader.new( @subdomain, num_per_page, @cacher, @group_nickname )    
+    loader = AlbumsLoader.new( @subdomain, num_per_page, @cacher, @group_nickname )
+    loader.add_url_params(@other_url_params)
     @albums = Albums.new( loader );
     return @albums
   end

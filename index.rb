@@ -13,11 +13,11 @@ require File.dirname(__FILE__) + '/lib/the_city.rb'
 
 # First param is your church's subdomain key.
 # Second param is whether or not to cache the data.
-the_city = TheCity.new('vintage21', true)
+the_city = TheCity.new('practice', true)
 
 # Set the group nickname to pull plaza items for.
 # http://helpdesk.onthecity.org/entries/422776-group-nickname
-the_city.set_group_nickname('@v21west')
+# the_city.set_group_nickname('@v21west')
 
 ## Load Topics
 array_of_topic_titles = the_city.topics.titles
