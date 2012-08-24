@@ -43,9 +43,14 @@ class BaseLoader
       return @cacher.get_data( @class_key )
     end   
 
-    @url += "&#{@other_url_params}" unless @other_url_params.empty?
+    @url_to_use =  
+    if @other_url_params.empty?
+      @url
+    else
+      @url + "&#{@other_url_params}"
+    end
 
-    json = open(@url).read
+    json = open(@url_to_use).read
     begin
       data = JSON.parse(json)    
     rescue
